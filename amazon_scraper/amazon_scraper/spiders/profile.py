@@ -5,15 +5,18 @@ class ProfileSpider(scrapy.Spider):
     name = 'profile'
     # allowed_domains = ['example.com']
     start_urls = [
-        'https://www.amazon.in/gp/profile/amzn1.account.AEQWFRM5IA7FG7DCJTEWAPYUOSAQ/ref=cm_cr_arp_d_gw_btm?ie=UTF8',
-        'https://www.amazon.in/gp/profile/amzn1.account.AG4YKVBOOFNNTHAPWMLKWC6ZNBJA/ref=cm_cr_dp_d_gw_tr?ie=UTF8'
+        'https://www.amazon.com/gp/profile/amzn1.account.AEQWFRM5IA7FG7DCJTEWAPYUOSAQ/ref=cm_cr_arp_d_gw_btm?ie=UTF8',
+        'https://www.amazon.com/gp/profile/amzn1.account.AG4YKVBOOFNNTHAPWMLKWC6ZNBJA/ref=cm_cr_dp_d_gw_tr?ie=UTF8',
+        'https://www.amazon.com/gp/profile/amzn1.account.AHZIBC4EYRFSEOXF7B7PU446OXYQ/ref=cm_cr_dp_d_gw_tr?ie=UTF8',
+        'https://www.amazon.com/gp/profile/amzn1.account.AHZYODNJPBAY2IPXG46GIR5VVJ5Q/ref=cm_cr_dp_d_gw_tr?ie=UTF8'
+
     ]
 
     def parse(self, response):
         profile = AmazonProfileItem()
 
         review_ranking = response.css('.a-size-base').css('::text').extract()
-        num_of_reviews = response.css('.large-margin-right:nth-child(1) .a-size-large').css('::text').extract()
+        num_of_reviews = response.css('.large-margin-right+ .large-margin-right .a-size-large').css('::text').extract()
         reviewer_ranking = response.css('.a-span12 .a-size-base::text').extract()
 
         profile['review_ranking'] = review_ranking
