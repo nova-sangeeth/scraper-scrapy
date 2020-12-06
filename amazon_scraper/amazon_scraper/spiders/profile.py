@@ -6,9 +6,9 @@ class ProfileSpider(scrapy.Spider):
     # allowed_domains = ['example.com']
     start_urls = [
         'https://www.amazon.com/gp/profile/amzn1.account.AEQWFRM5IA7FG7DCJTEWAPYUOSAQ/ref=cm_cr_arp_d_gw_btm?ie=UTF8',
-        'https://www.amazon.com/gp/profile/amzn1.account.AG4YKVBOOFNNTHAPWMLKWC6ZNBJA/ref=cm_cr_dp_d_gw_tr?ie=UTF8',
-        'https://www.amazon.com/gp/profile/amzn1.account.AHZIBC4EYRFSEOXF7B7PU446OXYQ/ref=cm_cr_dp_d_gw_tr?ie=UTF8',
-        'https://www.amazon.com/gp/profile/amzn1.account.AHZYODNJPBAY2IPXG46GIR5VVJ5Q/ref=cm_cr_dp_d_gw_tr?ie=UTF8'
+        # 'https://www.amazon.com/gp/profile/amzn1.account.AG4YKVBOOFNNTHAPWMLKWC6ZNBJA/ref=cm_cr_dp_d_gw_tr?ie=UTF8',
+        # 'https://www.amazon.com/gp/profile/amzn1.account.AHZIBC4EYRFSEOXF7B7PU446OXYQ/ref=cm_cr_dp_d_gw_tr?ie=UTF8',
+        # 'https://www.amazon.com/gp/profile/amzn1.account.AHZYODNJPBAY2IPXG46GIR5VVJ5Q/ref=cm_cr_dp_d_gw_tr?ie=UTF8'
 
     ]
 

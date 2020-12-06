@@ -27,6 +27,7 @@ class ReviewSpider(scrapy.Spider):
         votes = response.css('.cr-vote-text::text').extract()
         verified_review = response.css('.a-color-state::text').extract()
         date_of_review = response.css('.review-date::text').extract()
+        num_of_images = len(response.xpath('//img').extract())
         #-------------------------------
         items['title'] = title
         items['reviewer'] = reviewer
@@ -35,5 +36,6 @@ class ReviewSpider(scrapy.Spider):
         items['votes'] = votes
         items['verified_review'] = verified_review
         items['date_of_review'] = date_of_review
+        items['num_of_images'] = num_of_images
         
         yield items
