@@ -18,20 +18,20 @@ class ReviewSpider(scrapy.Spider):
     def parse(self, response):
         items = AmazonScraperItem()
 
-        reviewer = response.css('.a-profile-name::text').extract()
         title = response.css('.a-text-bold span::text').extract()
-        rating = response.css('.review-rating::text').extract()
-        date_of_review = response.css('.review-date::text').extract()
-        verified_review = response.css('.a-color-state::text').extract()
-        review = response.css('.a-expander-partial-collapse-content , .a-expander-partial-collapse-content .cr-original-review-content').xpath('normalize-space(text())').extract()
+        reviewer = response.css('.a-profile-name::text').extract()
+        rating = response.xpath('.//i[@data-hook="review-star-rating"]//text()').extract()
+        review = response.xpath('.//span[@data-hook="review-body"]//text()').extract()
         votes = response.css('.cr-vote-text::text').extract()
+        verified_review = response.css('.a-color-state::text').extract()
+        date_of_review = response.css('.review-date::text').extract()
         #-------------------------------
-        items['reviewer'] = reviewer
         items['title'] = title
+        items['reviewer'] = reviewer
         items['rating'] = rating
-        items['date_of_review'] = date_of_review
-        items['verified_review'] = verified_review
         items['review'] = review
         items['votes'] = votes
+        items['verified_review'] = verified_review
+        items['date_of_review'] = date_of_review
         
         yield items
