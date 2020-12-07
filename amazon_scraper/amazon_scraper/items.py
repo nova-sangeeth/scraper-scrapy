@@ -16,7 +16,6 @@ class AmazonScraperItem(scrapy.Item):
     review = scrapy.Field()
     votes = scrapy.Field()
     comments = scrapy.Field()
-    num_of_images = scrapy.Field()
 
 
 class AmazonProfileItem(scrapy.Item):
