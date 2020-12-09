@@ -14,7 +14,7 @@ class AmazonScraperPipeline:
     def __init__(self):
         self.file = open("items3.csv", 'wb')
         self.exporter = CsvItemExporter(self.file)
-        # self.exporter = JsonItemExporter(self.file, encoding='utf-8', ensure_ascii=False)
+        # self.exporter = JsonItemExporter(self.file, encoding='utf-8')
         self.exporter.start_exporting()
     
     def close_spider(self, review):
