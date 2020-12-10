@@ -15,7 +15,7 @@ import json
    
 class AmazonScraperPipeline:
     def open_spider(self, review):
-        self.file = open('items.json', 'w')
+        self.file = open('profile.csv', 'w')
 
     def close_spider(self, review):
         self.file.close()
