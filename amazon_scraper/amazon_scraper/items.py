@@ -18,3 +18,9 @@ class AmazonScraperItem(scrapy.Item):
     votes_helpful = scrapy.Field()
     image_num = scrapy.Field()
     num_of_comments = scrapy.Field()
+
+
+class ProfileItem(scrapy.Item):
+    user_ranking = scrapy.Field()
+    helpful_votes = scrapy.Field()
+    total_review = scrapy.Field()
