@@ -4,11 +4,7 @@ from scrapy.http import Request
 class ReviewSpider(scrapy.Spider):
     name = 'review'
     allowed_domains = ['amazon.in']
-    # start_urls='https://www.amazon.in/Apple-MacBook-Air-13-3-inch-MQD32HN/product-reviews/B073Q5R6VR/ref=cm_cr_getr_d_paging_btm_next_3?ie=UTF8&reviewerType=all_reviews&pageNumber='
-    BaseUrl='https://www.amazon.in/Apple-MacBook-Air-13-3-inch-MQD32HN/product-reviews/B073Q5R6VR/ref=cm_cr_getr_d_paging_btm_next_3?ie=UTF8&reviewerType=all_reviews&pageNumber='
-    start_urls = []
-    for i in range(0,25):
-        start_urls.append(BaseUrl+str(i))
+    start_urls=['https://www.amazon.in/Apple-MacBook-Air-13-3-inch-MQD32HN/product-reviews/B073Q5R6VR/ref=cm_cr_arp_d_paging_btm_next_3?ie=UTF8&pageNumber=3&reviewerType=all_reviews']
 
     @staticmethod
     def get_text(selector_list):
@@ -52,7 +48,15 @@ class ReviewSpider(scrapy.Spider):
             yield item
 
 
-            # next_page = response.css('.a-pagination > .a-last a')
-            # if next_page:
-            #     next_page_link = "https://www.amazon.in/Apple-MacBook-Air-13-3-inch-MQD32HN/product-reviews/B073Q5R6VR/ref=cm_cr_arp_d_paging_btm_3?ie=UTF8&amp;pageNumber=3&amp;reviewerType=all_reviews" # get href link here
-            #     yield Request(next_page_link,callback=self.parse)
+        next_page = response.css('#cm_cr-pagination_bar > ul > li.a-last > a ::attr(href)').get()
+        if next_page: 
+            abs_url = f"https://www.amazon.in{next_page}"
+            yield scrapy.Request( 
+                url = abs_url, 
+                callback = self.parse 
+            ) 
+        else: 
+            print() 
+            print('No Page Left') 
+            print()
+
