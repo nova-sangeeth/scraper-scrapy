@@ -18,6 +18,7 @@ class ReviewSpider(scrapy.Spider):
     def parse(self, response):
         item = AmazonScraperItem()
         for review in response.css(".review"):
+            redirect_urls = response.request.meta.get('redirect_urls')
             author = review.css(".a-profile-name ::text").extract()
             item["author"] = self.get_text(author)
 
@@ -48,13 +49,15 @@ class ReviewSpider(scrapy.Spider):
             num_of_comments = review.css(".review-comment-total ::text").extract()
             item["num_of_comments"] = self.get_text(num_of_comments)
 
+            item['pageURL'] = redirect_urls[0] if redirect_urls else response.request.url
+
             yield item
 
         next_page = response.css(
             "#cm_cr-pagination_bar > ul > li.a-last > a ::attr(href)"
         ).get()
         if next_page:
-            abs_url = f"https://www.amazon.in{next_page}"
+            abs_url = f"https://www.amazon.com{next_page}"
             yield scrapy.Request(url=abs_url, callback=self.parse)
         else:
             logging.warning("Watch out! No pages left.")
