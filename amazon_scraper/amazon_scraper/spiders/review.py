@@ -6,9 +6,9 @@ import logging
 
 class ReviewSpider(scrapy.Spider):
     name = "review"
-    allowed_domains = ["amazon.in"]
+    allowed_domains = ["amazon.com"]
     start_urls = [
-        "https://www.amazon.in/Apple-MacBook-Air-13-3-inch-MQD32HN/product-reviews/B073Q5R6VR/ref=cm_cr_arp_d_paging_btm_next_3?ie=UTF8&pageNumber=3&reviewerType=all_reviews"
+        'https://www.amazon.com/Compatible-iPhone-Clear-Anti-Scratch-Absorption/product-reviews/B07HRJL27Z/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
     ]
 
     @staticmethod
