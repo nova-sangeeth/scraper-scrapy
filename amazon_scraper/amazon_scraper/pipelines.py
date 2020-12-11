@@ -7,20 +7,21 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 from scrapy.exporters import CsvItemExporter, JsonItemExporter
-from .items import AmazonScraperItem
+from .items import AmazonScraperItem, ProfileItem
 from .spiders import review
 import unicodedata
-import json
-
-   
 class AmazonScraperPipeline:
-    def open_spider(self, review):
-        self.file = open('profile.csv', 'w')
-
+    def __init__(self):
+        self.file = open("items3-userprofile-count.csv", 'wb')
+        self.exporter = CsvItemExporter(self.file)
+        # self.exporter = JsonItemExporter(self.file, encoding='utf-8')
+        self.exporter.start_exporting()
+    
     def close_spider(self, review):
+        self.exporter.finish_exporting()
         self.file.close()
-
-    def process_item(self, AmazonScraperItem, review):
-        line = json.dumps(ItemAdapter(AmazonScraperItem).asdict()) + "\n"
-        self.file.write(line)
-        return AmazonScraperItem 
+        
+    def process_item(self, ProfileItem, review):
+        self.exporter.export_item(ProfileItem)
+        return ProfileItem
+   
