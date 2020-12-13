@@ -14,7 +14,7 @@ class ReviewSpider(scrapy.Spider):
     @staticmethod
     def get_text(selector_list):
         return "".join(selector_list).replace("\n", "").strip()
-
+    # working on the empty data and depth of the scraping that happens during a session
     def parse(self, response):
         item = AmazonScraperItem()
         for review in response.css(".review"):
