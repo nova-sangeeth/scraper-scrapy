@@ -24,3 +24,4 @@ class AmazonScraperItem(scrapy.Item):
 class ProfileItem(scrapy.Item):
     helpful_votes = scrapy.Field()
     total_review = scrapy.Field()
+    ranking = scrapy.Field()
