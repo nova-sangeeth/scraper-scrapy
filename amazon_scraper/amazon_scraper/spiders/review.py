@@ -8,7 +8,7 @@ class ReviewSpider(scrapy.Spider):
     name = "review"
     allowed_domains = ["amazon.com"]
     start_urls = [
-        'https://www.amazon.com/Compatible-iPhone-Clear-Anti-Scratch-Absorption/product-reviews/B07HRJL27Z/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
+        'https://www.amazon.com/Portable-Charger-Anker-PowerCore-20100mAh/product-reviews/B00X5RV14Y/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
     ]
 
     @staticmethod
