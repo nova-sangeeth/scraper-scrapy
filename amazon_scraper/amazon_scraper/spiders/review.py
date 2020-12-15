@@ -3,14 +3,21 @@ from ..items import AmazonScraperItem
 from scrapy.http import Request
 import logging
 
+filename = ''
 
 class ReviewSpider(scrapy.Spider):
     name = "review"
     allowed_domains = ["amazon.com"]
-    start_urls = [
-        'https://www.amazon.com/Portable-Charger-Anker-PowerCore-20100mAh/product-reviews/B00X5RV14Y/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
-    ]
 
+    if filename == '':
+        start_urls = [
+        'https://www.amazon.com/Portable-Charger-Anker-PowerCore-20100mAh/product-reviews/B00X5RV14Y/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
+        ]
+        
+    def __init__(self, filename=filename):
+        if filename:
+            with open(filename, 'r') as r:
+                self.start_urls= r.readlines() 
     @staticmethod
     def get_text(selector_list):
         return "".join(selector_list).replace("\n", "").strip()
