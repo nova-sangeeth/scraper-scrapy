@@ -6,15 +6,6 @@ filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/anker_pro
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
     allowed_domains = ['amazon.in']
-    # start_urls = [        
-        # URL FOR THE RANKING OF A PROFILE
-        # 'https://www.amazon.in/hz/gamification/api/contributor/dashboard/amzn1.account.AFMGTWLMQURCOY3RL3NSYMPCA4YA'
-        # ----------------------------
-        # URL_FOR THE MAIN PROFILE 
-    #     'https://www.amazon.com/profilewidget/bio/amzn1.account.AEQWFRM5IA7FG7DCJTEWAPYUOSAQ?view=visitor',
-    #     'https://www.amazon.com/profilewidget/bio/amzn1.account.AF74F4YECD534QQGRXDVEEU6BQAQ?view=visitor'
-    # ]
-
     def __init__(self, filename=filename):
         if filename:
                 with open(filename, 'r') as r:
