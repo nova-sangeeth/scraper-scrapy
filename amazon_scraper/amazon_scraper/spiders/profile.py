@@ -2,7 +2,7 @@ import scrapy
 import json
 from ..items import ProfileItem
 import logging
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon-profile-url.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/anker_profile_urls.txt'
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
     allowed_domains = ['amazon.in']
