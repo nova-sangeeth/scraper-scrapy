@@ -9,7 +9,12 @@ filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon_sc
 class RankingSpider(scrapy.Spider):
     name = 'ranking'
     allowed_domains = ['amazon.com']
-    start_urls = ['https://www.amazon.com/profilewidget/bio/amzn1.account.AEQWFRM5IA7FG7DCJTEWAPYUOSAQ?view=visitor']
+    # start_urls = ['']
+
+    def __init__(self, filename=filename, **kwargs):
+        if filename:
+            with open(filename, 'r') as url_list:
+                self.start_urls = url_list.readlines()
 
     def parse(self, response):
         items = rankingItem()
