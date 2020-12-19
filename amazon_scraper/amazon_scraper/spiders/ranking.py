@@ -27,4 +27,5 @@ class RankingSpider(scrapy.Spider):
         yield items
 
         
-            
+# TESTING URL:
+# https://www.amazon.com/profilewidget/bio/amzn1.account.AEQWFRM5IA7FG7DCJTEWAPYUOSAQ?view=visitor
