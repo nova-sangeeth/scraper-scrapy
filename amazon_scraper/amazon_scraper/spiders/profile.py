@@ -6,7 +6,6 @@ filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon-pr
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
     allowed_domains = ['amazon.in']
-    start_urls = []
     def __init__(self, filename=filename):
         if filename:
                 with open(filename, 'r') as r:
@@ -16,31 +15,20 @@ class ProfileSpider(scrapy.Spider):
         item = ProfileItem()
         resp = json.loads(response.body)
         try:
-            try:
-                ranking = resp.get('topReviewerInfo').get('rank')
-                item['ranking'] = ranking
-            except:
-                logging.warning('Ranking is not available')
-            finally:
-                yield 'None'
-            try:
-                helpful = resp.get('helpfulVotes').get('helpfulVotesData').get('count')
-                item['helpful_votes'] = helpful
-            except:
-                logging.warning('Helpful votes not available..')
-            finally:
-                yield "None"
-            try:
-                helpful = resp.get('reviews').get('reviewsCountData').get('count')
-                item['total_review'] = helpful
-            except:
-                logging.warning('total_review  not available..')
-            finally:
-                yield "None"
+            ranking = resp.get('topReviewerInfo').get('rank')
+            item['ranking'] = ranking
         except:
-            logging.info('this is not a working...')
-        finally:
-            yield "The data cannnot be scrapped."
+            logging.warning('Ranking is not available')
+        try:
+            helpful = resp.get('helpfulVotes').get('helpfulVotesData').get('count')
+            item['helpful_votes'] = helpful
+        except:
+            logging.warning('Helpful votes not available..')
+        try:
+            helpful = resp.get('reviews').get('reviewsCountData').get('count')
+            item['total_review'] = helpful
+        except:
+            logging.warning('total_review  not available..')
         yield item
             
 # THE AJAX REQUEST URL FOR THE RANKING IN A PARTICULAR PROFILE IS:(replace the necessary account and run it in a file.)
