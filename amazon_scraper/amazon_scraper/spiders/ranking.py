@@ -3,6 +3,9 @@ from scrapy import item
 from ..items import rankingItem
 import json
 import logging
+
+
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon_scraper/ranking_urls.txt'
 class RankingSpider(scrapy.Spider):
     name = 'ranking'
     allowed_domains = ['amazon.com']
