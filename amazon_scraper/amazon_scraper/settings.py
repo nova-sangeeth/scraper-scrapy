@@ -11,6 +11,7 @@ BOT_NAME = 'amazon_scraper'
 
 SPIDER_MODULES = ['amazon_scraper.spiders']
 NEWSPIDER_MODULE = 'amazon_scraper.spiders'
+PROXY_POOL_ENABLED = True
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -54,6 +55,8 @@ SPIDER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'amazon_scraper.middlewares.AmazonScraperDownloaderMiddleware': 543,
+   'scrapy_proxy_pool.middlewares.ProxyPoolMiddleware': 610,
+   'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
 }
 
 # Enable or disable extensions
@@ -86,5 +89,5 @@ AUTOTHROTTLE_DEBUG = False
 HTTPCACHE_ENABLED = True
 #HTTPCACHE_EXPIRATION_SECS = 0
 HTTPCACHE_DIR = 'httpcache'
-HTTPCACHE_IGNORE_HTTP_CODES = [500, 502, 503, 504, 400, 403, 404, 408]
+# HTTPCACHE_IGNORE_HTTP_CODES = [500, 502, 503, 504, 400, 403, 404, 408]
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'

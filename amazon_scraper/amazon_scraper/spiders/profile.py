@@ -2,14 +2,16 @@ import scrapy
 import json
 from ..items import ProfileItem
 import logging
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon-profile-url.txt'
+from ..url_list import start_urls
+# filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/dump/disney_forge_profile_urls.txt'
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
-    allowed_domains = ['amazon.in']
-    def __init__(self, filename=filename):
-        if filename:
-                with open(filename, 'r') as r:
-                    self.start_urls = r.readlines()
+    allowed_domains = ['amazon.com']
+    start_urls  = start_urls
+    # def __init__(self, filename=filename):
+    #     if filename:
+    #             with open(filename, 'r') as r:
+    #                 self.start_urls = r.readlines()
 
     def parse (self, response):
         item = ProfileItem()

@@ -11,8 +11,8 @@ class ReviewSpider(scrapy.Spider):
 
     if filename == '':
         start_urls = [
-        'https://www.amazon.com/all-new-fire-tv-stick-with-alexa-voice-remote/product-reviews/B07ZZVX1F2/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
-        ]
+        'https://www.amazon.com/FilterBuy-6x12x1-Pleated-Furnace-Filters/product-reviews/B078J7P8P4/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
+    ]
         
     def __init__(self, filename=filename):
         if filename:

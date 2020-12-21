@@ -5,7 +5,7 @@ import json
 import logging
 
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/dump/hasbro_review_profile_urls.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/dump/hasbro_urls_profile.txt'
 class RankingSpider(scrapy.Spider):
     name = 'ranking'
     allowed_domains = ['amazon.com']
