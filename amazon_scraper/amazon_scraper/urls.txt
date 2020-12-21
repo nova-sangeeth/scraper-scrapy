@@ -1,9 +1,10 @@
-# 'https://www.amazon.com/gp/product/B07HRJL27Z?pf_rd_r=A7QB96297GNS6SR3JXAM&pf_rd_p=9d9090dd-8b99-4ac3-b4a9-90a1db2ef53b&th=1',
-# 'https://www.amazon.com/OtterBox-COMMUTER-Case-iPhone-11/dp/B07W7F4P63/ref=zg_bs_3081461011_7?_encoding=UTF8&psc=1&refRID=C0ZGH59RZJKECSE3Z136',
-# 'https://www.amazon.com/Spigen-Ultra-Hybrid-Designed-iPhone/dp/B07T2NBLX9/ref=zg_bs_3081461011_9?_encoding=UTF8&psc=1&refRID=C0ZGH59RZJKECSE3Z136',
-# 'https://www.amazon.com/Apple-AirPods-Charging-Latest-Model/dp/B07PXGQC1Q/ref=zg_bs_12097478011_2?_encoding=UTF8&psc=1&refRID=XFYTSEEJT5T9SFP2KGZD',
-# 'https://www.amazon.com/TOZO-Bluetooth-Wireless-Headphones-Waterproof/dp/B07J2Z5DBM/ref=zg_bs_12097478011_7?_encoding=UTF8&psc=1&refRID=XFYTSEEJT5T9SFP2KGZD',
-# 'https://www.amazon.com/Samsung-Bluetooth-Wireless-Charging-Included/dp/B07MWCNR3W/ref=zg_bs_12097478011_48?_encoding=UTF8&psc=1&refRID=XFYTSEEJT5T9SFP2KGZD',
-# 'https://www.amazon.com/Portable-Charger-Anker-PowerCore-20100mAh/dp/B00X5RV14Y/ref=zg_bs_7073960011_3?_encoding=UTF8&psc=1&refRID=8DRCQVGGT0H3KAEDQYKH',
-# 'https://www.amazon.com/INIU-High-Speed-Flashlight-Powerbank-Compatible/dp/B07CZDXDG8/ref=zg_bs_7073960011_5?_encoding=UTF8&psc=1&refRID=8DRCQVGGT0H3KAEDQYKH'
-      
+https://www.amazon.com/Hasbro-A5640-Connect-4-Game/product-reviews/B00D8STBHY/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews
+https://www.amazon.com/ThinkFun-Zingo-Winning-Pre-Readers-Readers/product-reviews/B01DY818JG/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews
+https://www.amazon.com/product-reviews/B00D7OAOYI/ref=zg_bs_166225011_cr_4?ie=UTF8&refRID=W4PJWJ7T2Y2RXYGW9M46
+https://www.amazon.com/Hasbro-Gaming-C1009-Monopoly-Classic/product-reviews/B01MU9K3XU/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews
+https://www.amazon.com/LeapFrog-Animals-Book-Frustration-Packaging/product-reviews/B085KTB1WY/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews
+https://www.amazon.com/Kids-Against-Maturity-Original-Humanity/product-reviews/B076PRWVFG/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews
+https://www.amazon.com/Melissa-Doug-Scratch-Friendship-Notes/product-reviews/B08CNFNJZD/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews
+https://www.amazon.com/product-reviews/B0863FPYMB/ref=zg_bs_166225011_cr_13?ie=UTF8&refRID=W4PJWJ7T2Y2RXYGW9M46
+https://www.amazon.com/product-reviews/B088J44FHP/ref=zg_bs_166225011_cr_21?ie=UTF8&refRID=W4PJWJ7T2Y2RXYGW9M46
+https://www.amazon.com/Jenga-A2120EU4-Classic-Game/product-reviews/B00ABA0ZOA/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews
