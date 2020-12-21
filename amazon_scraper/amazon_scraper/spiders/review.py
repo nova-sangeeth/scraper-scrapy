@@ -11,7 +11,7 @@ class ReviewSpider(scrapy.Spider):
 
     if filename == '':
         start_urls = [
-        'https://www.amazon.com/Portable-Charger-Anker-PowerCore-20100mAh/product-reviews/B00X5RV14Y/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
+        'https://www.amazon.com/all-new-fire-tv-stick-with-alexa-voice-remote/product-reviews/B07ZZVX1F2/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
         ]
         
     def __init__(self, filename=filename):

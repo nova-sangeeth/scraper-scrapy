@@ -5,13 +5,13 @@ import json
 import logging
 
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon_scraper/ranking_urls.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/dump/hasbro_review_profile_urls.txt'
 class RankingSpider(scrapy.Spider):
     name = 'ranking'
     allowed_domains = ['amazon.com']
     # start_urls = ['']
 
-    def __init__(self, filename=filename, **kwargs):
+    def __init__(self, filename=filename):
         if filename:
             with open(filename, 'r') as url_list:
                 self.start_urls = url_list.readlines()
