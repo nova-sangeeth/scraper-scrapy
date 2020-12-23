@@ -1,4 +1,4 @@
 Scrapy==2.4.1
 shub==2.12.0
 scrapy-proxy-pool==0.1.9
-
+scrapy-user-agents==0.1.1
