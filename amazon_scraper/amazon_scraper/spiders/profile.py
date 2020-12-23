@@ -8,30 +8,25 @@ filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
     allowed_domains = ['amazon.com']
-    # start_urls = []
+    # start_urls = ['https://www.amazon.com/hz/gamification/api/contributor/dashboard/amzn1.account.AHZLBXPEMVGLNEEXYCZ4FHXAIWEA']
+
     def __init__(self, filename=filename):
         if filename:
                 with open(filename, 'r') as r:
                     self.start_urls = r.readlines()
+                    
 
     def parse (self, response):
         item = ProfileItem()
         resp = json.loads(response.body)
-        try:
-            helpful = resp.get('helpfulVotes').get('helpfulVotesData').get('count')
-            item['helpful_votes'] = helpful
-        except:
-            logging.debug('Helpful votes not available..')
-        try:
-            helpful = resp.get('reviews').get('reviewsCountData').get('count')
-            item['total_review'] = helpful
-        except:
-            logging.debug('total_review  not available..')
-        try:
-            item['page_url'] = response.request.url
-        except:
-            logging.debug('The url is not available.')
-
+        helpful = resp.get('helpfulVotes').get('helpfulVotesData').get('count')
+        item['helpful_votes'] = helpful
+        helpful = resp.get('reviews').get('reviewsCountData').get('count')
+        item['total_review'] = helpful
+        visibility = resp.get('reviews').get('reviewsCountData').get('visibilityText')
+        item['visibility_status'] = visibility
+        #store the page url for reference is required.
+        item['page_url'] = response.request.url
         yield item
             
 # THE AJAX REQUEST URL FOR THE RANKING IN A PARTICULAR PROFILE IS:(replace the necessary account and run it in a file.)
