@@ -25,6 +25,7 @@ class ProfileItem(scrapy.Item):
     helpful_votes = scrapy.Field()
     total_review = scrapy.Field()
     page_url = scrapy.Field()
+    visibility_status = scrapy.Field()
 
 class rankingItem(scrapy.Item):
     ranking = scrapy.Field()

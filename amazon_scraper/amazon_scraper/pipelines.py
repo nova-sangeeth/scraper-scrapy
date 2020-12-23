@@ -12,7 +12,7 @@ from .spiders import review
 import unicodedata
 class AmazonScraperPipeline:
     def __init__(self):
-        self.file = open("disney_forge_ranking.csv", 'wb')
+        self.file = open("think_fun_profile_main_details.csv", 'wb')
         self.exporter = CsvItemExporter(self.file)
         # self.exporter = JsonItemExporter(self.file, encoding='utf-8')
         self.exporter.start_exporting()

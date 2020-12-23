@@ -5,7 +5,7 @@ import json
 import logging
 
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/dump/toys/disney_profile_urls.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/think_fun_profile.txt'
 class RankingSpider(scrapy.Spider):
     name = 'ranking'
     allowed_domains = ['amazon.com']
@@ -19,11 +19,9 @@ class RankingSpider(scrapy.Spider):
     def parse(self, response):
         items = rankingItem()
         resp = json.loads(response.body)
-        try:
-            ranking = resp.get('topReviewerInfo').get('rank')
-            items['ranking'] = ranking
-        except:
-            logging.warning('There is no data in the ranking section....')
+        ranking = resp.get('topReviewerInfo').get('rank')
+        items['ranking'] = ranking
+        # logging.warning('There is no data in the ranking section....')
         yield items
 
         
