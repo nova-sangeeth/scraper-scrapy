@@ -3,7 +3,7 @@ import json
 from ..items import ProfileItem
 import logging
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/think_fun_profile.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon_scraper/sorry_family_game_reviews_profile.txt'
 
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
@@ -25,7 +25,7 @@ class ProfileSpider(scrapy.Spider):
         item['total_review'] = helpful
         visibility = resp.get('reviews').get('reviewsCountData').get('visibilityText')
         item['visibility_status'] = visibility
-        #store the page url for reference is required.
+        #store the page url for reference if required.
         item['page_url'] = response.request.url
         yield item
             
