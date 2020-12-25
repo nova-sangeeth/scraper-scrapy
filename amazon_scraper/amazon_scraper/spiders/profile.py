@@ -3,8 +3,8 @@ import json
 from ..items import ProfileItem
 import logging
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon_scraper/sorry_family_game_reviews_profile.txt'
-
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/trouble-game-profile-urls.txt'
+No_data = "None"
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
     allowed_domains = ['amazon.com']
@@ -18,15 +18,18 @@ class ProfileSpider(scrapy.Spider):
 
     def parse (self, response):
         item = ProfileItem()
-        resp = json.loads(response.body)
-        helpful = resp.get('helpfulVotes').get('helpfulVotesData').get('count')
-        item['helpful_votes'] = helpful
-        helpful = resp.get('reviews').get('reviewsCountData').get('count')
-        item['total_review'] = helpful
-        visibility = resp.get('reviews').get('reviewsCountData').get('visibilityText')
-        item['visibility_status'] = visibility
-        #store the page url for reference if required.
-        item['page_url'] = response.request.url
+        try:
+            resp = json.loads(response.body)
+            helpful = resp.get('reviews').get('reviewsCountData').get('count')
+            item['total_review'] = helpful
+            visibility = resp.get('reviews').get('reviewsCountData').get('visibilityText')
+            item['visibility_status'] = visibility
+            #store the page url for reference if required.
+            item['page_url'] = response.request.url
+            helpful = resp.get('helpfulVotes').get('helpfulVotesData').get('count')
+            item['helpful_votes'] = helpful
+        except ValueError:
+                yield No_data
         yield item
             
 # THE AJAX REQUEST URL FOR THE RANKING IN A PARTICULAR PROFILE IS:(replace the necessary account and run it in a file.)

@@ -10,18 +10,18 @@ from scrapy.exporters import CsvItemExporter, JsonItemExporter
 from .items import AmazonScraperItem, ProfileItem
 from .spiders import review
 import unicodedata
-# class AmazonScraperPipeline:
-#     def __init__(self):
-#         self.file = open("think_fun_profile_main_details.csv", 'wb')
-#         self.exporter = CsvItemExporter(self.file)
-#         # self.exporter = JsonItemExporter(self.file, encoding='utf-8')
-#         self.exporter.start_exporting()
+class AmazonScraperPipeline:
+    def __init__(self):
+        self.file = open("trouble_game_profile_data.csv", 'wb')
+        self.exporter = CsvItemExporter(self.file)
+        # self.exporter = JsonItemExporter(self.file, encoding='utf-8')
+        self.exporter.start_exporting()
     
-#     def close_spider(self):
-#         self.exporter.finish_exporting()
-#         self.file.close()
+    def close_spider(self, review):
+        self.exporter.finish_exporting()
+        self.file.close()
         
-#     def process_item(self, ProfileItem):
-#         self.exporter.export_item(ProfileItem)
-#         return ProfileItem
+    def process_item(self, ProfileItem, review):
+        self.exporter.export_item(ProfileItem)
+        return ProfileItem
    

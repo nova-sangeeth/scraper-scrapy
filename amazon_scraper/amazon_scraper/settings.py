@@ -14,7 +14,7 @@ NEWSPIDER_MODULE = 'amazon_scraper.spiders'
 PROXY_POOL_ENABLED = True
 
 RETRY_TIMES = 10
-RETRY_HTTP_CODES = [500, 502, 503, 504, 400, 403, 404,]
+RETRY_HTTP_CODES = [500, 502, 503, 504, 400, 403, 404]
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'amazon_scraper (+http://www.yourdomain.com)'
 # USER_AGENT = 'Mozilla/5.0 (compatible;Googlebot/2.1; +http://www.google.com/bot.html)'
@@ -24,7 +24,10 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 ROBOTSTXT_OBEY = False
 DEPTH_LIMIT = 1000
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 20
+CONCURRENT_REQUESTS = 32
+# TOR_IPROTATOR_ENABLED  =  True 
+# TOR_IPROTATOR_CHANGE_AFTER  =  10# number of requests made to the same IP address
+# TOR_IPROTATOR_ALLOW_REUSE_IP_AFTER  =  #
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -32,10 +35,10 @@ CONCURRENT_REQUESTS = 20
 DOWNLOAD_DELAY = 10
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 20
-CONCURRENT_REQUESTS_PER_IP = 20
+# CONCURRENT_REQUESTS_PER_IP = 20
 
 # Disable cookies (enabled by default)
-# COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -66,8 +69,10 @@ DOWNLOADER_MIDDLEWARES = {
    # 'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
    'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
-   'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
-   'rotating_proxies.middlewares.BanDetectionMiddleware': 620
+   # 'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
+   # 'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
+   # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware' :  110 , 
+   # 'tor_ip_rotator.middlewares.TorProxyMiddleware' :  100 
 }
 
 # Enable or disable extensions
