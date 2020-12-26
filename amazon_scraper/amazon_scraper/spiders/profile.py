@@ -3,7 +3,7 @@ import json
 from ..items import ProfileItem
 import logging
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/trouble-game-profile-urls.txt'
+filename = '/home/nova/webdev-lessons/scraper-scrapy/amazon_scraper/url_dump/hasbro_profile_urls.txt'
 No_data = "None"
 class ProfileSpider(scrapy.Spider):
     name = 'profile'

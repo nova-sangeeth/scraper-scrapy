@@ -4,8 +4,8 @@ from ..items import rankingItem
 import json
 import logging
 
-
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/think_fun_profile.txt'
+No_data = 'None'
+filename = '/home/nova/webdev-lessons/scraper-scrapy/amazon_scraper/url_dump/hasbro_profile_urls.txt'
 class RankingSpider(scrapy.Spider):
     name = 'ranking'
     allowed_domains = ['amazon.com']
@@ -18,10 +18,13 @@ class RankingSpider(scrapy.Spider):
 
     def parse(self, response):
         items = rankingItem()
-        resp = json.loads(response.body)
-        ranking = resp.get('topReviewerInfo').get('rank')
-        items['ranking'] = ranking
-        # logging.warning('There is no data in the ranking section....')
+        try:
+            resp = json.loads(response.body)
+            ranking = resp.get('topReviewerInfo').get('rank')
+            items['ranking'] = ranking
+            # logging.warning('There is no data in the ranking section....')
+        except ValueError:
+            yield No_data
         yield items
 
         
