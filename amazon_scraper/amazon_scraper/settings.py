@@ -32,7 +32,7 @@ CONCURRENT_REQUESTS = 32
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 10
+DOWNLOAD_DELAY = 7
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 20
 # CONCURRENT_REQUESTS_PER_IP = 20
@@ -54,7 +54,8 @@ COOKIES_ENABLED = False
 #     # ...
 # ]
 # ROTATING_PROXY_LIST_PATH = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon_scraper/proxy-list.txt'
-ROTATING_PROXY_LIST_PATH = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon_scraper/proxy-lists/google-approved-list.txt'
+# ROTATING_PROXY_LIST_PATH = '/home/nova/webdev-lessons/scraper-scrapy/amazon_scraper/amazon_scraper/proxy-lists/google-approved-list.txt'
+ROTATING_PROXY_LIST_PATH = '/home/nova/webdev-lessons/scraper-scrapy/amazon_scraper/amazon_scraper/proxy-lists/proxy-list-1.txt'
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
@@ -69,8 +70,8 @@ DOWNLOADER_MIDDLEWARES = {
    # 'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
    'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
-   # 'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
-   # 'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
+   'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
+   'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
    # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware' :  110 , 
    # 'tor_ip_rotator.middlewares.TorProxyMiddleware' :  100 
 }
