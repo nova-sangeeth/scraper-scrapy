@@ -12,7 +12,8 @@ from .spiders import review
 import unicodedata
 class AmazonScraperPipeline:
     def __init__(self):
-        self.file = open("monopoly_game_profile_details.csv", 'wb')
+
+        self.file = open("kids_against_maturity_profile_ranking.csv", 'wb')
         self.exporter = CsvItemExporter(self.file)
         # self.exporter = JsonItemExporter(self.file, encoding='utf-8')
         self.exporter.start_exporting()
