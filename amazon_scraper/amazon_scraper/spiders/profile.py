@@ -2,8 +2,7 @@ import scrapy
 import json
 from ..items import ProfileItem
 import logging
-
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/trouble-game-profile-urls.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/monopoly-game.txt'
 No_data = "None"
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
