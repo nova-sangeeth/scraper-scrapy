@@ -1,11 +1,10 @@
 import scrapy
-from scrapy import item
 from ..items import rankingItem
 import json
 import logging
 
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/monopoly-game.txt'
 No_data = 'None'
-filename = '/home/nova/webdev-lessons/scraper-scrapy/amazon_scraper/url_dump/kids_against_maturity.txt'
 class RankingSpider(scrapy.Spider):
     name = 'ranking'
     allowed_domains = ['amazon.com']
@@ -22,8 +21,8 @@ class RankingSpider(scrapy.Spider):
             resp = json.loads(response.body)
             ranking = resp.get('topReviewerInfo').get('rank')
             items['ranking'] = ranking
-            # logging.warning('There is no data in the ranking section....')
         except ValueError:
+            logging.warning('There is no data in the ranking section....')
             yield No_data
         yield items
 
