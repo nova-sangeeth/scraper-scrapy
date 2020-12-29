@@ -3,7 +3,7 @@ from ..items import rankingItem
 import json
 import logging
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/monopoly-game.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/leap-frog.txt'
 No_data = 'None'
 class RankingSpider(scrapy.Spider):
     name = 'ranking'

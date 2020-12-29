@@ -24,7 +24,7 @@ USER_AGENT ='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gec
 ROBOTSTXT_OBEY = False
 DEPTH_LIMIT = 1000
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 5
+CONCURRENT_REQUESTS = 16
 # TOR_IPROTATOR_ENABLED  =  True 
 # TOR_IPROTATOR_CHANGE_AFTER  =  10# number of requests made to the same IP address
 # TOR_IPROTATOR_ALLOW_REUSE_IP_AFTER  =  #
@@ -32,7 +32,7 @@ CONCURRENT_REQUESTS = 5
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 8
+DOWNLOAD_DELAY = 10
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 20
 # CONCURRENT_REQUESTS_PER_IP = 20
@@ -55,7 +55,7 @@ COOKIES_ENABLED = False
 # ]
 # ROTATING_PROXY_LIST_PATH = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon_scraper/proxy-list.txt'
 # ROTATING_PROXY_LIST_PATH = '/home/nova/webdev-lessons/scraper-scrapy/amazon_scraper/amazon_scraper/proxy-lists/google-approved-list.txt'
-ROTATING_PROXY_LIST_PATH = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon_scraper/proxy-lists/proxy-list-3.txt'
+ROTATING_PROXY_LIST_PATH = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/amazon_scraper/proxy-lists/proxy-list-6.txt'
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
