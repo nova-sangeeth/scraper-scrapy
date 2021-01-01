@@ -3,7 +3,7 @@ from ..items import rankingItem
 import json
 import logging
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/melissa-ranking-urls.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/tools_and_home_improvement/Filtrate-ranking-urls.txt'
 
 No_data = 'None'
 class RankingSpider(scrapy.Spider):
@@ -22,6 +22,8 @@ class RankingSpider(scrapy.Spider):
             resp = json.loads(response.body)
             ranking = resp.get('topReviewerInfo').get('rank')
             items['ranking'] = ranking
+            page_url = response.url
+            items['page_url'] = page_url
         except ValueError:
             logging.warning('There is no data in the ranking section....')
             yield No_data

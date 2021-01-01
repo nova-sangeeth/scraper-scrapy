@@ -14,6 +14,7 @@ NEWSPIDER_MODULE = 'amazon_scraper.spiders'
 PROXY_POOL_ENABLED = True
 
 RETRY_TIMES = 10
+HTTPERROR_ALLOWED_CODES  =[404, 403, 503, 500]
 RETRY_HTTP_CODES = [500, 502, 503, 504, 400, 403, 404]
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'amazon_scraper (+http://www.yourdomain.com)'

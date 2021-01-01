@@ -9,13 +9,19 @@ class ReviewSpider(scrapy.Spider):
     name = "review"
     allowed_domains = ["amazon.com"]
 
-    if filename == '':
-        start_urls = [ ]
+    # if filename == '':
+    #     start_urls = []
         
-    def __init__(self, filename=filename):
-        if filename:
-            with open(filename, 'r') as r:
-                self.start_urls= r.readlines() 
+    # def __init__(self, filename=filename):
+    #     if filename:
+    #         with open(filename, 'r') as r:
+    #             self.start_urls= r.readlines() 
+
+    BaseUrl='https://www.amazon.com/Filtrete-10x20x1-Filter-Living-Purifier/product-reviews/B08KJNRGCK/ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber='
+    start_urls = []
+    for i in range(0,50):
+        start_urls.append(BaseUrl+str(i))
+
     @staticmethod
     def get_text(selector_list):
         return "".join(selector_list).replace("\n", "").strip()
@@ -58,11 +64,11 @@ class ReviewSpider(scrapy.Spider):
 
             yield item
 
-        next_page = response.css(
-            "#cm_cr-pagination_bar > ul > li.a-last > a ::attr(href)"
-        ).get()
-        if next_page:
-            abs_url = f"https://www.amazon.com{next_page}"
-            yield scrapy.Request(url=abs_url, callback=self.parse)
-        else:
-            logging.warning("Watch out! No pages left.")
+        # next_page = response.css(
+        #     "#cm_cr-pagination_bar > ul > li.a-last > a ::attr(href)"
+        # ).get()
+        # if next_page:
+        #     abs_url = f"https://www.amazon.com{next_page}"
+        #     yield scrapy.Request(url=abs_url, callback=self.parse)
+        # else:
+        #     logging.warning("Watch out! No pages left.")
