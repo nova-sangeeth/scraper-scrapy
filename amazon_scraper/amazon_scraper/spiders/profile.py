@@ -2,7 +2,7 @@ import scrapy
 import json
 from ..items import ProfileItem
 import logging
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/tools_and_home_improvement/gearLight-tactical-profile-urls.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/tools_and_home_improvement/Tubshroom-profile.txt'
 No_data = "None"
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
