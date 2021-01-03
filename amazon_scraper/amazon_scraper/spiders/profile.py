@@ -2,7 +2,8 @@ import scrapy
 import json
 from ..items import ProfileItem
 import logging
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/tools_and_home_improvement/Tubshroom-profile.txt'
+
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/Electronics/Replacement-battery-profile-urls.txt'
 No_data = "None"
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
@@ -33,3 +34,4 @@ class ProfileSpider(scrapy.Spider):
             
 # THE AJAX REQUEST URL FOR THE RANKING IN A PARTICULAR PROFILE IS:(replace the necessary account and run it in a file.)
 # https://www.amazon.com/hz/gamification/api/contributor/dashboard/amzn1.account.AHZLBXPEMVGLNEEXYCZ4FHXAIWEA
+# https://www.amazon.com/hz/gamification/api/contributor/dashboard

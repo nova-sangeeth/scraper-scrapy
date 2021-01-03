@@ -32,3 +32,5 @@ class RankingSpider(scrapy.Spider):
         
 # TESTING URL:
 # https://www.amazon.com/profilewidget/bio/amzn1.account.AEQWFRM5IA7FG7DCJTEWAPYUOSAQ?view=visitor
+# https://www.amazon.com/profilewidget/bio
+# ?view=visitor
