@@ -13,7 +13,7 @@ import unicodedata
 class AmazonScraperPipeline:
     def __init__(self):
 
-        self.file = open("Replacement_Battery-profile-details.csv", 'wb')
+        self.file = open("TP-Link-profile-details.csv", 'wb')
         self.exporter = CsvItemExporter(self.file)
         # self.exporter = JsonItemExporter(self.file, encoding='utf-8')
         self.exporter.start_exporting()
