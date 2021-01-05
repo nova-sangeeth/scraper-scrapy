@@ -3,7 +3,7 @@ import json
 from ..items import ProfileItem
 import logging
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/Electronics/Tp-Link-profile-urls.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/Automotive and part/This-workx-for-profile-details.txt'
 No_data = "None"
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
