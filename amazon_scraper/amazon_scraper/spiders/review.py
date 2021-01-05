@@ -17,7 +17,7 @@ class ReviewSpider(scrapy.Spider):
     #         with open(filename, 'r') as r:
     #             self.start_urls= r.readlines() 
 
-    BaseUrl='https://www.amazon.com/product-reviews/B07N5K5K2S/ref=zg_bs_home-garden_cr_12?ie=UTF8&refRID=NMKBVV9JCWSVR5H0M3AB&pageNumber='
+    BaseUrl='https://www.amazon.com/product-reviews/B08KGLGYQG/ref=zg_bs_7586146011_cr_10?ie=UTF8&refRID=E5NJDQ9GKKXQCXXDPSHW&pageNumber='
     start_urls = []
     for i in range(0,50):
         start_urls.append(BaseUrl+str(i))
