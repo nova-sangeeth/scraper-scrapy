@@ -9,18 +9,21 @@ class ReviewSpider(scrapy.Spider):
     name = "review"
     allowed_domains = ["amazon.com"]
 
-    # if filename == '':
-    #     start_urls = []
+    if filename == '':
+        start_urls = []
         
-    # def __init__(self, filename=filename):
-    #     if filename:
-    #         with open(filename, 'r') as r:
-    #             self.start_urls= r.readlines() 
+    def __init__(self, filename=filename):
+        if filename:
+            with open(filename, 'r') as r:
+                self.start_urls= r.readlines() 
 
-    BaseUrl='https://www.amazon.com/product-reviews/B08KGLGYQG/ref=zg_bs_7586146011_cr_10?ie=UTF8&refRID=E5NJDQ9GKKXQCXXDPSHW&pageNumber='
-    start_urls = []
-    for i in range(0,50):
-        start_urls.append(BaseUrl+str(i))
+# To scrape a specific number of pages of reviews.
+#--------------------------------------------------------------------------------------------------------------------------------------------------
+    # BaseUrl='https://www.amazon.com/product-reviews/TESTONLY/ref=zg_bs_7586146011_cr_10?ie=UTF8&refRID=TESTONLY&pageNumber='
+    # start_urls = []
+    # for i in range(0,50):
+    #     start_urls.append(BaseUrl+str(i))
+#--------------------------------------------------------------------------------------------------------------------------------------------------
 
     @staticmethod
     def get_text(selector_list):
@@ -64,11 +67,11 @@ class ReviewSpider(scrapy.Spider):
 
             yield item
 
-        # next_page = response.css(
-        #     "#cm_cr-pagination_bar > ul > li.a-last > a ::attr(href)"
-        # ).get()
-        # if next_page:
-        #     abs_url = f"https://www.amazon.com{next_page}"
-        #     yield scrapy.Request(url=abs_url, callback=self.parse)
-        # else:
-        #     logging.warning("Watch out! No pages left.")
+        next_page = response.css(
+            "#cm_cr-pagination_bar > ul > li.a-last > a ::attr(href)"
+        ).get()
+        if next_page:
+            abs_url = f"https://www.amazon.com{next_page}"
+            yield scrapy.Request(url=abs_url, callback=self.parse)
+        else:
+            logging.warning("Watch out! No pages left.")

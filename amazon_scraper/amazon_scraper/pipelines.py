@@ -15,7 +15,6 @@ class AmazonScraperPipeline:
 
         self.file = open("This-workx-for-profile-details.csv", 'wb')
         self.exporter = CsvItemExporter(self.file)
-        # self.exporter = JsonItemExporter(self.file, encoding='utf-8')
         self.exporter.start_exporting()
     
     def close_spider(self, review):

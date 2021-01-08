@@ -3,12 +3,12 @@ import json
 from ..items import ProfileItem
 import logging
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/Automotive and part/This-workx-for-profile-details.txt'
+filename = ''
 No_data = "None"
 class ProfileSpider(scrapy.Spider):
     name = 'profile'
     allowed_domains = ['amazon.com']
-    # start_urls = ['https://www.amazon.com/hz/gamification/api/contributor/dashboard/amzn1.account.AHZLBXPEMVGLNEEXYCZ4FHXAIWEA']
+    # start_urls = ['https://www.amazon.com/hz/gamification/api/contributor/dashboard/amzn1.account.AHZLBXPETESTONLY4FHXAIWEA']
 
     def __init__(self, filename=filename):
         if filename:
@@ -34,5 +34,5 @@ class ProfileSpider(scrapy.Spider):
         yield item
             
 # THE AJAX REQUEST URL FOR THE RANKING IN A PARTICULAR PROFILE IS:(replace the necessary account and run it in a file.)
-# https://www.amazon.com/hz/gamification/api/contributor/dashboard/amzn1.account.AHZLBXPEMVGLNEEXYCZ4FHXAIWEA
+# https://www.amazon.com/hz/gamification/api/contributor/dashboard/amzn1.account.AHZLBXPEMVTESTONLYHXAIWEA
 # https://www.amazon.com/hz/gamification/api/contributor/dashboard

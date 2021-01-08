@@ -3,7 +3,7 @@ from ..items import rankingItem
 import json
 import logging
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/url_dump/tools_and_home_improvement/Filtrate-ranking-urls.txt'
+filename = ''
 
 No_data = 'None'
 class RankingSpider(scrapy.Spider):
@@ -31,6 +31,5 @@ class RankingSpider(scrapy.Spider):
 
         
 # TESTING URL:
-# https://www.amazon.com/profilewidget/bio/amzn1.account.AEQWFRM5IA7FG7DCJTEWAPYUOSAQ?view=visitor
+# https://www.amazon.com/profilewidget/bio/amzn1.account.AEQWFRM5TESTINGONLYAPYUOSAQ?view=visitor
 # https://www.amazon.com/profilewidget/bio
-# ?view=visitor
