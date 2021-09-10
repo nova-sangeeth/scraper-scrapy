@@ -6,6 +6,8 @@ import logging
 filename = ''
 
 No_data = 'None'
+
+
 class RankingSpider(scrapy.Spider):
     name = 'ranking'
     allowed_domains = ['amazon.com']
@@ -29,7 +31,7 @@ class RankingSpider(scrapy.Spider):
             yield No_data
         yield items
 
-        
+
 # TESTING URL:
 # https://www.amazon.com/profilewidget/bio/amzn1.account.AEQWFRM5TESTINGONLYAPYUOSAQ?view=visitor
 # https://www.amazon.com/profilewidget/bio
