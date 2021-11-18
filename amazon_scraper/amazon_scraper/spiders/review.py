@@ -20,10 +20,10 @@ class ReviewSpider(scrapy.Spider):
 
 # To scrape a specific number of pages of reviews.
 # --------------------------------------------------------------------------------------------------------------------------------------------------
-    # BaseUrl='https://www.amazon.com/product-reviews/TESTONLY/ref=zg_bs_7586146011_cr_10?ie=UTF8&refRID=TESTONLY&pageNumber='
-    # start_urls = []
-    # for i in range(0,50):
-    #     start_urls.append(BaseUrl+str(i))
+    BaseUrl='https://www.amazon.com/Takeya-10310-Patented-Airtight-Silicone/product-reviews/B00FFLY64U/ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber='
+    start_urls = []
+    for i in range(0,35):
+        start_urls.append(BaseUrl+str(i))
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
     @staticmethod
@@ -73,11 +73,11 @@ class ReviewSpider(scrapy.Spider):
 
             yield item
 
-        next_page = response.css(
-            "#cm_cr-pagination_bar > ul > li.a-last > a ::attr(href)"
-        ).get()
-        if next_page:
-            abs_url = f"https://www.amazon.com{next_page}"
-            yield scrapy.Request(url=abs_url, callback=self.parse)
-        else:
-            logging.warning("Watch out! No pages left.")
+        # next_page = response.css(
+        #     "#cm_cr-pagination_bar > ul > li.a-last > a ::attr(href)"
+        # ).get()
+        # if next_page:
+        #     abs_url = f"https://www.amazon.com{next_page}"
+        #     yield scrapy.Request(url=abs_url, callback=self.parse)
+        # else:
+        #     logging.warning("Watch out! No pages left.")

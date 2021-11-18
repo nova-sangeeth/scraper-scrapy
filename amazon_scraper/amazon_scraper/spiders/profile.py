@@ -3,7 +3,7 @@ import json
 from ..items import ProfileItem
 import logging
 
-filename = ''
+filename = '/home/asus/work/scraper-scrapy/amazon_scraper/contigo-handled-autoseal-profile.txt'
 No_data = "None"
 
 

@@ -3,7 +3,7 @@ from ..items import rankingItem
 import json
 import logging
 
-filename = ''
+filename = '/home/asus/work/scraper-scrapy/amazon_scraper/contigo-handled-autoseal-ranking.txt'
 
 No_data = 'None'
 
