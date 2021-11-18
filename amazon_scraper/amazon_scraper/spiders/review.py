@@ -20,7 +20,7 @@ class ReviewSpider(scrapy.Spider):
 
 # To scrape a specific number of pages of reviews.
 # --------------------------------------------------------------------------------------------------------------------------------------------------
-    BaseUrl='https://www.amazon.com/Takeya-10310-Patented-Airtight-Silicone/product-reviews/B00FFLY64U/ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber='
+    BaseUrl='https://www.amazon.com/Fitbit-Fitness-Activity-Tracking-Included/product-reviews/B084CQ41M2/ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber='
     start_urls = []
     for i in range(0,35):
         start_urls.append(BaseUrl+str(i))

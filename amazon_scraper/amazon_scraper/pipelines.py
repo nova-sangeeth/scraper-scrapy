@@ -13,7 +13,7 @@ import unicodedata
 class AmazonScraperPipeline:
     def __init__(self):
 
-        self.file = open("Takeya-10310-Patented-Airtight-Silicone-REVIEW.csv", 'wb')
+        self.file = open("Fitbit-Fitness-Activity-Tracking-Included-REVIEW.csv", 'wb')
         self.exporter = CsvItemExporter(self.file)
         self.exporter.start_exporting()
     
