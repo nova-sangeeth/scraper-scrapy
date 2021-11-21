@@ -1,4 +1,3 @@
-author_profile_url
 https://www.amazon.com/hz/gamification/api/contributor/dashboard/amzn1.account.AEZZPPECPSFUBGT6I6VW5DX22EQQ
 https://www.amazon.com/hz/gamification/api/contributor/dashboard/amzn1.account.AFG7Z46RENR7KGS3SHSDUBVTWMBA
 https://www.amazon.com/hz/gamification/api/contributor/dashboard/amzn1.account.AFROLC47FWF7XF2LMDMMEPL5YUFQ
