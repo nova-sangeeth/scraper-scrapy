@@ -20,7 +20,7 @@ class ReviewSpider(scrapy.Spider):
 
 # To scrape a specific number of pages of reviews.
 # --------------------------------------------------------------------------------------------------------------------------------------------------
-    BaseUrl='https://www.amazon.com/Fitbit-Fitness-Activity-Tracking-Included/product-reviews/B084CQ41M2/ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber='
+    BaseUrl='https://www.amazon.com/Super-Smash-Bros-Ultimate-Nintendo-Switch/product-reviews/B01N5OKGLH/ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber='
     start_urls = []
     for i in range(0,35):
         start_urls.append(BaseUrl+str(i))
@@ -28,7 +28,10 @@ class ReviewSpider(scrapy.Spider):
 
     @staticmethod
     def get_text(selector_list):
-        return "".join(selector_list).replace("\n", "").strip()
+        remove_new_line = "".join(selector_list).replace("\n", "").strip()
+        alter_profile_url = remove_new_line.replace("/ref=cm_cr_arp_d_gw_btm?ie=UTF8", "").strip()
+        alter_profile_url_2 = alter_profile_url.replace("/gp/profile/", "").strip()
+        return alter_profile_url_2
     # working on the empty data and depth of the scraping that happens during a session
 
     def parse(self, response):
