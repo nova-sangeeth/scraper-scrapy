@@ -3,7 +3,7 @@ import json
 from ..items import ProfileItem
 import logging
 
-filename = '/home/asus/work/scraper-scrapy/amazon_scraper/contigo-handled-autoseal-profile.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/profile_and_ranking_urls/profile_urls/home_and_kitchen/Takeya-10310-Patented-Airtight-Silicone-PROFILE.txt'
 No_data = "None"
 
 
@@ -17,6 +17,11 @@ class ProfileSpider(scrapy.Spider):
             with open(filename, 'r') as r:
                 self.start_urls = r.readlines()
 
+    @staticmethod
+    def get_user_id(key):
+        prefix = "".join(key).replace("https://www.amazon.com/hz/gamification/api/contributor/dashboard/", "").strip()
+        return prefix
+
     def parse(self, response):
         item = ProfileItem()
         try:
@@ -29,7 +34,7 @@ class ProfileSpider(scrapy.Spider):
             helpful = resp.get('helpfulVotes').get('helpfulVotesData').get('count')
             item['helpful_votes'] = helpful
             page_url = response.url
-            item['page_url'] = page_url
+            item['page_url'] = self.get_user_id(page_url)
         except ValueError:
             yield No_data
         yield item

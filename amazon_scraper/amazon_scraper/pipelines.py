@@ -10,10 +10,16 @@ from scrapy.exporters import CsvItemExporter, JsonItemExporter
 from .items import AmazonScraperItem, ProfileItem
 from .spiders import review
 import unicodedata
+
+
+category = "testing_items"
+filename  = "testing_rankings"
+extension = ".csv"
+
 class AmazonScraperPipeline:
     def __init__(self):
 
-        self.file = open("Fitbit-Fitness-Activity-Tracking-Included-REVIEW.csv", 'wb')
+        self.file = open(f"{filename}-{category}{extension}", 'wb')
         self.exporter = CsvItemExporter(self.file)
         self.exporter.start_exporting()
     

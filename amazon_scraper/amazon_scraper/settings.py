@@ -33,14 +33,14 @@ CONCURRENT_REQUESTS = 20
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 7
-
+DOWNLOAD_DELAY = 6
+RANDOMIZE_DOWNLOAD_DELAY = False
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 20
 # CONCURRENT_REQUESTS_PER_IP = 20
 
 # Disable cookies (enabled by default)
-COOKIES_ENABLED = False
+COOKIES_ENABLED = True
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -53,7 +53,7 @@ COOKIES_ENABLED = False
 
 # ROTATING_PROXY_LIST = ['proxy1.com:8000']
 
-# ROTATING_PROXY_LIST_PATH = ''
+# ROTATING_PROXY_LIST_PATH = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/proxy-list.txt'
 # ROTATING_PROXY_LIST_PATH = ''
 # ROTATING_PROXY_LIST_PATH = ''
 

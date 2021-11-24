@@ -20,7 +20,7 @@ class ReviewSpider(scrapy.Spider):
 
 # To scrape a specific number of pages of reviews.
 # --------------------------------------------------------------------------------------------------------------------------------------------------
-    BaseUrl='https://www.amazon.com/Super-Smash-Bros-Ultimate-Nintendo-Switch/product-reviews/B01N5OKGLH/ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber='
+    BaseUrl='https://www.amazon.com/LEGO-DC-Super-Villains-Nintendo-Switch/product-reviews/B07DFDNMYQ/ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber='
     start_urls = []
     for i in range(0,35):
         start_urls.append(BaseUrl+str(i))

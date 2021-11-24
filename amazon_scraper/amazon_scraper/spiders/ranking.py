@@ -3,7 +3,7 @@ from ..items import rankingItem
 import json
 import logging
 
-filename = '/home/asus/work/scraper-scrapy/amazon_scraper/contigo-handled-autoseal-ranking.txt'
+filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/profile_and_ranking_urls/ranking_urls/Health/Zacurate-Fingertip-Oximeter-Saturation-Batteries-RANKING.txt'
 
 No_data = 'None'
 
@@ -18,6 +18,12 @@ class RankingSpider(scrapy.Spider):
             with open(filename, 'r') as url_list:
                 self.start_urls = url_list.readlines()
 
+    @staticmethod
+    def get_user_id(key):
+        prefix = "".join(key).replace("https://www.amazon.com/profilewidget/bio/", "").strip()
+        res = prefix.replace("?view=visitor", "").strip()
+        return res
+
     def parse(self, response):
         items = rankingItem()
         try:
@@ -25,7 +31,7 @@ class RankingSpider(scrapy.Spider):
             ranking = resp.get('topReviewerInfo').get('rank')
             items['ranking'] = ranking
             page_url = response.url
-            items['page_url'] = page_url
+            items['page_url'] = self.get_user_id(page_url)
         except ValueError:
             logging.warning('There is no data in the ranking section....')
             yield No_data
