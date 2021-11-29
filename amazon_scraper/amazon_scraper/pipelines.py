@@ -12,14 +12,14 @@ from .spiders import review
 import unicodedata
 
 
-category = "testing_items"
-filename  = "testing_rankings"
+category = ""
+filename  = "Under-Armour-Charged-Assert-Running-RANKING"
 extension = ".csv"
 
 class AmazonScraperPipeline:
     def __init__(self):
 
-        self.file = open(f"{filename}-{category}{extension}", 'wb')
+        self.file = open(f"{filename}{category}{extension}", 'wb')
         self.exporter = CsvItemExporter(self.file)
         self.exporter.start_exporting()
     

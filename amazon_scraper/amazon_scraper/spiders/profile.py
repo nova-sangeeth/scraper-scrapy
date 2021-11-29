@@ -3,7 +3,9 @@ import json
 from ..items import ProfileItem
 import logging
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/profile_and_ranking_urls/profile_urls/home_and_kitchen/Takeya-10310-Patented-Airtight-Silicone-PROFILE.txt'
+
+path = "/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/profile_and_ranking_urls/profile_urls/batch-2/"
+filename = path + "Under-Armour-Charged-Assert-Running-PROFILE.txt"
 No_data = "None"
 
 

@@ -3,7 +3,8 @@ from ..items import rankingItem
 import json
 import logging
 
-filename = '/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/profile_and_ranking_urls/ranking_urls/Health/Zacurate-Fingertip-Oximeter-Saturation-Batteries-RANKING.txt'
+path ='/home/novasangeeth/Code--dev/scraper-scrapy/amazon_scraper/profile_and_ranking_urls/ranking_urls/batch-2/'
+filename = path + 'Under-Armour-Charged-Assert-Running-RANKING.txt'
 
 No_data = 'None'
 
